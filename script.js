@@ -10,10 +10,8 @@ select.addEventListener("change", chandeCurrency)
 
 
 function convert() {
-    convertValue = input.value / 5.20;
+    convertValue = chandeCurrency()
     valor.innerHTML = new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL"}).format(input.value);
-    valorTwo.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(convertValue);
-    input.value = "";
     
 }
 
@@ -25,11 +23,16 @@ function chandeCurrency() {
             secondImg.src = "/img/estados-unidos (1) 1.svg"
             money[1].innerHTML = "Dólar Americano"
             convertValue = input.value / 5.20;
+            valorTwo.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(convertValue);
+            return convertValue
             break;
         case "Euro":
             secondImg.src = "/img/euro.svg"
             money[1].innerHTML = "Euro"
             convertValue = input.value / 5.53
+            valorTwo.innerHTML = new Intl.NumberFormat("de-DE", {style: "currency", currency: "EUR"}).format(convertValue);
+            return convertValue
+            break;
         default:
             break;
     }
