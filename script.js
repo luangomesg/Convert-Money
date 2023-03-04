@@ -20,14 +20,14 @@ function chandeCurrency() {
     
     switch (select.value) {
         case "Dolar":
-            secondImg.src = "/img/estados-unidos (1) 1.svg"
+            secondImg.src = "/img/estados-unidos (1) 1.jpg"
             money[1].innerHTML = "Dólar Americano"
             convertValue = input.value / 5.20;
             valorTwo.innerHTML = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(convertValue);
             return convertValue
             break;
         case "Euro":
-            secondImg.src = "/img/euro.svg"
+            secondImg.src = "/img/euro.jpg"
             money[1].innerHTML = "Euro"
             convertValue = input.value / 5.53
             valorTwo.innerHTML = new Intl.NumberFormat("de-DE", {style: "currency", currency: "EUR"}).format(convertValue);
