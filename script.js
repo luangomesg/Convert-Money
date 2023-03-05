@@ -7,16 +7,16 @@ const secondImg = document.querySelector(".secondImg");
 let convertValue 
 const API = "https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL"
 btn.addEventListener("click", convert)
-select.addEventListener("change", chandeCurrency)
+select.addEventListener("change", changeCurrency)
 
 
 function convert() {
-    convertValue = chandeCurrency()
+    convertValue = changeCurrency()
     valor.innerHTML = new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL"}).format(input.value);
     
 }
 
-function chandeCurrency() {
+function changeCurrency() {
     const money = document.querySelectorAll(".money");
     const price = fetch(API).then((response) => {return response.json()}).catch((error) => {console.log(error)})
     price.then((data) => {
@@ -54,10 +54,3 @@ function chandeCurrency() {
     
     
 }
-
-
-
-
-
-
-
