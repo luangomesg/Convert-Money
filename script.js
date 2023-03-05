@@ -43,7 +43,7 @@ function changeCurrency() {
                 secondImg.alt = "BTC";
                 money[1].innerHTML = "BitCoin"
                 convertValue = input.value / data.BTCBRL.ask
-                valorTwo.innerHTML = new Intl.NumberFormat("de-DE", {style: "currency", currency: "BTC"}).format(convertValue);
+                valorTwo.innerHTML = new Intl.NumberFormat("de-DE", {style: "currency", currency: "BTC", maximumSignificantDigits: 2}).format(convertValue);
                 return convertValue
                 break;
             default:
