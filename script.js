@@ -38,6 +38,14 @@ function chandeCurrency() {
                 valorTwo.innerHTML = new Intl.NumberFormat("de-DE", {style: "currency", currency: "EUR"}).format(convertValue);
                 return convertValue
                 break;
+            case "Bitcoin":
+                secondImg.src = "/img/bitcoin.svg"
+                secondImg.alt = "BTC";
+                money[1].innerHTML = "BitCoin"
+                convertValue = input.value / data.BTCBRL.ask
+                valorTwo.innerHTML = new Intl.NumberFormat("de-DE", {style: "currency", currency: "BTC"}).format(convertValue);
+                return convertValue
+                break;
             default:
                 break;
         }
