@@ -10,16 +10,15 @@ btn.addEventListener("click", convert)
 select.addEventListener("change", changeCurrency)
 
 
-function convert() {
+ function convert() {
     convertValue = changeCurrency()
     valor.innerHTML = new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL"}).format(input.value);
     
 }
 
-function changeCurrency() {
+ async function changeCurrency() {
     const money = document.querySelectorAll(".money");
-    const price = fetch(API).then((response) => {return response.json()}).catch((error) => {console.log(error)})
-    price.then((data) => {
+    await fetch(API).then((response) => {return response.json()}).catch((error) => {console.log(error)}).then((data) => {
 
         switch (select.value) {
             case "Dolar":
