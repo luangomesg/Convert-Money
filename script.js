@@ -18,8 +18,8 @@ select.addEventListener("change", changeCurrency)
 
  async function changeCurrency() {
     const money = document.querySelectorAll(".money");
-    await fetch(API).then((response) => {return response.json()}).catch((error) => {console.log(error)}).then((data) => {
-
+    const data = await fetch(API).then((response) => {return response.json()}).catch((error) => {console.log(error)})
+    console.log(data)
         switch (select.value) {
             case "Dolar":
                 secondImg.src = "/img/estados-unidos (1) 1.svg"
@@ -49,7 +49,7 @@ select.addEventListener("change", changeCurrency)
                 break;
         }
            
-    })
+    }
     
     
-}
+
